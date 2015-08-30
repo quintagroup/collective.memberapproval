@@ -7,34 +7,33 @@
                   reset python:options.get('reset', None) or here.portal_password_reset.requestReset(member.getId())"
 >From: <span tal:replace="structure view/encoded_mail_sender" />
 To: <span tal:replace="python:member.getProperty('email')" />
-Subject: <span tal:replace="view/registered_notify_subject" />
+Subject: Your UPW website registration
 Precedence: bulk
 
 <div i18n:domain="passwordresettool"
      i18n:translate="mailtemplate_registered_user_body"
      tal:omit-tag=""
      tal:define="fullname python:member.getProperty('fullname')">
-    Welcome <span i18n:name="fullname" tal:replace="fullname" />,
+    Aloha <span i18n:name="fullname" tal:replace="fullname" />,
 	
-    your user account has been created.
-	Your username is <span i18n:name="member" tal:replace="member" />. 
-	Please activate it by visiting
+    Mahalo for applying for member-only access to UPW’s website. 
+    Please click on the link below complete your registration and choose a password.  
+    Please store your password as you will need it to log into the site to access Member-only content. 
+
+    UPW Staff is reviewing your application and you will receive a separate email with 
+    the subject “Welcome to UPW’s Member Website!” once your application has been approved.
+
+	  Please click on this link now:
 
     <span i18n:name="set_password" tal:replace="python:here.pwreset_constructURL(reset['randomstring'])+'?userid='+member.getUserName()" />
 
-    Please activate your account before <span i18n:name="expirationdate" tal:replace="python:
+    This step must be completed before <span i18n:name="expirationdate" tal:replace="python:
     context.toLocalizedTime(reset['expires'], long_format=1)" />
     
-    Note that your account also needs to be approved before you can log in.
-    You can activate the account with the above link before or after it is approved.
+    Mahalo!
+
+    UPW Website Staff
 
 </div>
 
-<div i18n:domain="passwordresettool"
-     i18n:translate="greetings"
-     tal:omit-tag="">
-    With kind regards,
-</div>
---
-<span tal:replace="python:here.email_from_name" />
 </tal:root>
