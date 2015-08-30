@@ -19,7 +19,7 @@
 
         <h1 class="documentFirstHeading"
             i18n:translate="heading_welcome">
-            Welcome!
+            Mahalo for starting the 2-step registration process
         </h1>
 
         <div class="documentDescription" i18n:translate="description_you_are_registered">
@@ -32,20 +32,25 @@
                            toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                            expire_date python:toLocalizedTime(DateTime() + expire_length / 24.0, long_format=1)"
                i18n:translate="description_password_reset_or_registered">
-                You will receive an e-mail shortly containing a URL that will allow you to
-                validate your email and 
-                set your password. When you receive this e-mail, please follow the link to
-                complete your registration process. NOTE: The password reset URL will expire
-                on <span tal:replace="expire_date" i18n:name="time"/>. If your
-                password reset request expires, you may use the "Forgot your password" link
-                to generate another password reset request.
+                <strong>Step 1: Register your email address and password</strong><br />
+                Check your inbox for a confirmation email with the subject line “Your UPW website registration”.  
+                Open that email click on link to choose a password and complete your registration process. 
+                Make sure you save your password. You must complete this step before 
+                <span tal:replace="expire_date" i18n:name="time"/>.
             </p>
             
             
-            <p>Your account will also need to be approved before you can log in. You can 
-            validate your email and set your password before or after the account being approved.
+            <p><strong>Step 2: Wait for your membership approval email</strong><br />
+               Once you have confirmed your email, our staff will review your application. 
+               If you are a member of UPW in good standing, you will receive an email with the 
+               subject line “Welcome to UPW’s Member Website!”.
             </p>
-
+            <p>
+            You may then log in using using your email and password generated in step 1 to access exclusive Member only content.
+            </p>
+            <p>
+            Welcome aboard!
+            </p>
         </div>
 
     </div>
